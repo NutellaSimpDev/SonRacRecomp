@@ -1,0 +1,20 @@
+# Sonic & All-Stars Racing Transformed - Configuration File
+
+[Display]
+window_width = 1920
+window_height = 1080
+fullscreen = false
+vsync = true
+present_letterbox = true
+present_effect = "cas"
+present_cas_additional_sharpness = 0.5
+
+[GPU]
+resolution_scale = 1
+anisotropic_override = 16
+async_shader_compilation = true
+d3d12_allow_variable_refresh_rate_and_tearing = true
+
+[Keybinds]
+bind_settings = "F1"
+bind_console = "Backtick"

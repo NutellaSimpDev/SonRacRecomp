@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_launcher"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- Hero panel: identity, game status and the race start button -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.36"
+        android:background="@drawable/bg_hero"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:contentDescription="SonRac"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.02"
+                    android:text="SonRac"
+                    android:textColor="@color/text_primary"
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All-Stars Racing Transformed"
+                    android:textColor="@color/sonic_gold"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtDeviceBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_chip"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:text="Snapdragon 8 Elite • Vulkan"
+            android:textColor="#BFD4FF"
+            android:textSize="11sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.12"
+            android:text="ESTADO DEL JUEGO"
+            android:textColor="#8FB0F0"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtGameStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_status"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:text="default.xex detectado"
+            android:textColor="@color/sonic_cyan"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartGame"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/btn_sonic_start"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.08"
+            android:stateListAnimator="@null"
+            android:text="INICIAR CARRERA"
+            android:textColor="#14110A"
+            android:textSize="17sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <!-- Settings: left column (source + controls), right column (graphics) -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_weight="0.64"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1.1"
+                android:orientation="vertical">
+
+                <!-- Game source -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_sonic_racing"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SonRac_SectionLabel"
+                        android:text="ORIGEN DEL JUEGO" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnSelectIso"
+                            style="@style/SonRac_SecondaryButton"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:text="Cargar ISO" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnSelectFolder"
+                            style="@style/SonRac_SecondaryButton"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:text="Carpeta" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Controls -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_sonic_racing"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/SonRac_SectionLabel"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="CONTROLES" />
+
+                        <TextView
+                            android:id="@+id/txtControllersDetected"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 mandos"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/btnConfigureGamepad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:paddingHorizontal="4dp"
+                            android:text="Probar"
+                            android:textColor="@color/accent_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swVirtualPad"
+                        style="@style/SonRac_Switch"
+                        android:text="Pad táctil en pantalla" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swHapticVibration"
+                        style="@style/SonRac_Switch"
+                        android:layout_marginTop="0dp"
+                        android:text="Vibración al pulsar" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opacidad"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp" />
+
+                        <SeekBar
+                            android:id="@+id/sbPadOpacity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="75"
+                            android:progressTint="@color/accent_blue"
+                            android:thumbTint="@color/text_primary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Graphics -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/card_sonic_racing"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/SonRac_SectionLabel"
+                    android:text="GRÁFICOS" />
+
+                <TextView
+                    style="@style/SonRac_FieldLabel"
+                    android:text="Resolución" />
+
+                <Spinner
+                    android:id="@+id/spnResolution"
+                    style="@style/SonRac_Spinner" />
+
+                <TextView
+                    style="@style/SonRac_FieldLabel"
+                    android:text="Driver Vulkan" />
+
+                <Spinner
+                    android:id="@+id/spnDriver"
+                    style="@style/SonRac_Spinner" />
+
+                <TextView
+                    android:id="@+id/btnImportDriver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingVertical="6dp"
+                    android:text="+ Importar driver Turnip (.zip)"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swVsync"
+                    style="@style/SonRac_Switch"
+                    android:text="VSync" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

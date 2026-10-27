@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sonic & All-Stars Racing Transformed Palette -->
+    <color name="sonic_blue">#0066FF</color>
+    <color name="sonic_blue_dark">#081938</color>
+    <color name="sonic_carbon_dark">#050814</color>
+    <color name="sonic_card_bg">#0D1529</color>
+    <color name="sonic_card_border">#1C2A4A</color>
+    <color name="sonic_gold">#FFCC00</color>
+    <color name="sonic_yellow">#FFE600</color>
+    <color name="sonic_red">#FF2A2A</color>
+    <color name="sonic_cyan">#00F0FF</color>
+
+    <!-- Xbox 360 Controller Colors -->
+    <color name="xbox_a_green">#107C10</color>
+    <color name="xbox_b_red">#E81123</color>
+    <color name="xbox_x_blue">#0078D7</color>
+    <color name="xbox_y_yellow">#F2B800</color>
+    <color name="xbox_stick_bg">#2A3550</color>
+    <color name="xbox_stick_knob">#4A5A80</color>
+    <color name="xbox_trigger_bg">#18233C</color>
+
+    <!-- UI Elements -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#8A9BBE</color>
+    <color name="text_accent">#38BDF8</color>
+    <color name="text_label">#5F7DB8</color>
+    <color name="accent_blue">#2F8CFF</color>
+</resources>

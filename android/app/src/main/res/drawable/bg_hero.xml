@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:angle="300"
+                android:startColor="#0B3BB8"
+                android:centerColor="#0A2163"
+                android:endColor="#081230" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <!-- Speed-stripe accent along the bottom edge -->
+    <item android:gravity="bottom" android:height="3dp" android:left="20dp" android:right="20dp">
+        <shape>
+            <gradient
+                android:angle="0"
+                android:startColor="#00FFC21A"
+                android:centerColor="#FFC21A"
+                android:endColor="#00FFC21A" />
+        </shape>
+    </item>
+</layer-list>

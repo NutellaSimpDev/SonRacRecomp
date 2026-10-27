@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions for Haptics, Storage and Controllers -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- High Performance Graphics Features -->
+    <uses-feature android:name="android.hardware.vulkan.version" android:version="0x401000" android:required="true" />
+    <uses-feature android:name="android.hardware.gamepad" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="SonRac"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.SonRac.SonicLauncher"
+        android:hasFragileUserData="true"
+        android:largeHeap="true"
+        android:isGame="true"
+        android:appCategory="game"
+        android:extractNativeLibs="true"
+        tools:targetApi="34">
+
+        <!-- Sonic Themed Pre-Game Launcher & Configuration Menu -->
+        <activity
+            android:name=".LauncherActivity"
+            android:exported="true"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation"
+            android:theme="@style/Theme.SonRac.SonicLauncher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Game Activity with Vulkan viewport and Xbox Virtual Pad -->
+        <!-- The game runs in its own process; SDL owns its window and native thread.
+             singleTask: relaunching over a live session would orphan the surface
+             the SDL thread still holds. -->
+        <activity
+            android:name=".GameActivity"
+            android:exported="false"
+            android:process=":game"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape"
+            android:resizeableActivity="false"
+            android:preferMinimalPostProcessing="true"
+            android:configChanges="layoutDirection|locale|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation|density|fontScale"
+            android:theme="@style/Theme.SonRac.Fullscreen">
+            <meta-data
+                android:name="SDL_ENV.SDL_ORIENTATIONS"
+                android:value="LandscapeLeft LandscapeRight" />
+            <meta-data
+                android:name="SDL_ENV.SDL_ENABLE_SCREEN_KEYBOARD"
+                android:value="0" />
+            <meta-data
+                android:name="SDL_ENV.SDL_JOYSTICK_HIDAPI"
+                android:value="0" />
+        </activity>
+
+    </application>
+
+</manifest>
