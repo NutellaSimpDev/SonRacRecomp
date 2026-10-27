@@ -1,0 +1,49 @@
+# --- Datos del juego: jamás subir (dumpea tu propia copia) ---
+assets/
+android_assets/
+*.xex
+*.iso
+
+# --- Código generado a partir del juego: se produce localmente ---
+generated/
+generated_clean/
+generated_old_polluted/
+
+# --- Compilación y salidas ---
+out/
+build/
+build-clang/
+*.exe
+*.dll
+*.lib
+*.pdb
+*.o
+*.obj
+*.a
+*.so
+
+# --- Volcados, capturas y artefactos de análisis ---
+*.png
+*.jpg
+*.jpeg
+*.bin
+*.spv
+*.nfsp
+*.rar
+*.dex
+*.log
+*.zip
+
+# --- IDE y sistema ---
+.vs/
+.vscode/
+.idea/
+*.user
+local.properties
+.gradle/
+
+# --- Config local de Android ---
+android/local.properties
+android/.gradle/
+android/build/
+android/app/build/
